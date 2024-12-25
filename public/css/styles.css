@@ -1,0 +1,139 @@
+/* styles.css */
+
+/* Style global */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #4caf50;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+nav {
+  background-color: #333;
+  padding: 10px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1,
+h2 {
+  font-family: "Arial", sans-serif;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+#calendar {
+  padding-top: 20px;
+}
+
+#fullcalendar {
+  max-width: 100%;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+/* Formulaire de contact */
+#contact {
+  padding-top: 40px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+form textarea {
+  resize: vertical;
+}
+
+form button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #45a049;
+}
+
+form button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+form input,
+form select,
+form textarea {
+  font-size: 14px;
+}

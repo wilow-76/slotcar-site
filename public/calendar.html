@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Slot Car Digital 1:32</title>
+    <title>Calendrier - Slot Car Digital 1:32</title>
 
     <!-- Liens CSS de FullCalendar (version non modulaire) -->
     <link
@@ -20,41 +20,28 @@
   <body>
     <header>
       <div class="container">
-        <h1>Bienvenue sur Slot Car Digital 1:32</h1>
-        <p>Le site dédié aux passionnés de slot car digital !</p>
+        <h1>Calendrier des événements</h1>
+        <p>
+          Retrouvez tous les événements à venir dans le domaine du slot car
+          digital 1:32.
+        </p>
       </div>
     </header>
 
     <nav>
       <ul>
-        <li><a href="#presentation">Accueil</a></li>
+        <li><a href="index.html">Accueil</a></li>
         <li><a href="calendar.html">Calendrier</a></li>
-        <!-- Lien vers la page Calendrier -->
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
 
     <main>
-      <section id="presentation">
+      <section id="calendar">
         <div class="container">
-          <h2>À propos de nous</h2>
-          <p>
-            Ce site est une plateforme entièrement gratuite dédiée aux
-            passionnés de slot car digital 1:32. Nous vous offrons :
-          </p>
-          <ul>
-            <li>
-              Les dernières actualités sur les courses et les accessoires.
-            </li>
-            <li>Un suivi complet du championnat de France.</li>
-            <li>
-              Un calendrier interactif regroupant tous les événements ouverts à
-              cette discipline.
-            </li>
-            <li>
-              Une newsletter pour rester informé des dernières nouveautés.
-            </li>
-          </ul>
+          <h2>Calendrier Interactif</h2>
+          <div id="fullcalendar"></div>
+          <!-- Emplacement du calendrier -->
         </div>
       </section>
     </main>
@@ -64,5 +51,11 @@
         <p>&copy; 2024 Slot Car Digital 1:32. Tous droits réservés.</p>
       </div>
     </footer>
+
+    <!-- Liens JS pour FullCalendar (version non modulaire) -->
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
+
+    <!-- Votre fichier JavaScript pour initialiser le calendrier -->
+    <script src="js/calendar.js"></script>
   </body>
 </html>
