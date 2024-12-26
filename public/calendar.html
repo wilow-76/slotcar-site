@@ -4,58 +4,58 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calendrier - Slot Car Digital 1:32</title>
-
-    <!-- Liens CSS de FullCalendar (version non modulaire) -->
+    <link rel="stylesheet" href="css/styles.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css"
       rel="stylesheet"
     />
-
-    <!-- Votre CSS personnalisé -->
-    <link rel="stylesheet" href="css/styles.css" />
-
-    <!-- Favicon (optionnel) -->
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
   </head>
   <body>
     <header>
       <div class="container">
         <h1>Calendrier des événements</h1>
-        <p>
-          Retrouvez tous les événements à venir dans le domaine du slot car
-          digital 1:32.
-        </p>
+        <nav>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="calendar.html">Calendrier</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
       </div>
     </header>
-
-    <nav>
-      <ul>
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="calendar.html">Calendrier</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
 
     <main>
       <section id="calendar">
         <div class="container">
-          <h2>Calendrier Interactif</h2>
+          <h2>Calendrier des événements</h2>
           <div id="fullcalendar"></div>
-          <!-- Emplacement du calendrier -->
+          <button id="addEventBtn" class="btn">Ajouter un événement</button>
         </div>
       </section>
     </main>
 
     <footer>
       <div class="container">
-        <p>&copy; 2024 Slot Car Digital 1:32. Tous droits réservés.</p>
+        <p>&copy; 2024 Slot Car Digital 1:32 - Tous droits réservés.</p>
       </div>
     </footer>
 
-    <!-- Liens JS pour FullCalendar (version non modulaire) -->
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const calendarEl = document.getElementById("fullcalendar");
+        const calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: "dayGridMonth",
+          events: "/api/events",
+        });
+        calendar.render();
+      });
 
-    <!-- Votre fichier JavaScript pour initialiser le calendrier -->
-    <script src="js/calendar.js"></script>
+      document
+        .getElementById("addEventBtn")
+        .addEventListener("click", function () {
+          window.location.href = "add-event.html";
+        });
+    </script>
   </body>
 </html>

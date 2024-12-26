@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ajouter un Événement</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>Ajouter un événement</h1>
+        <nav>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="calendar.html">Calendrier</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="add-event-form">
+        <form id="eventForm">
+          <label for="title">Titre de l'événement</label>
+          <input type="text" id="title" name="title" required />
+
+          <label for="date">Date de début</label>
+          <input type="date" id="date" name="date" required />
+
+          <label for="time">Heure de début</label>
+          <input type="time" id="time" name="time" required />
+
+          <label for="endDate">Date de fin</label>
+          <input type="date" id="endDate" name="endDate" required />
+
+          <label for="endTime">Heure de fin</label>
+          <input type="time" id="endTime" name="endTime" required />
+
+          <label for="description">Description</label>
+          <textarea id="description" name="description" required></textarea>
+
+          <button type="submit" class="btn">Ajouter l'événement</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2024 Slot Car Digital 1:32 - Tous droits réservés.</p>
+      </div>
+    </footer>
+
+    <script>
+      document
+        .getElementById("eventForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Empêcher le rechargement de la page
+
+          const newEvent = {
+            title: document.getElementById("title").value,
+            date: document.getElementById("date").value,
+            endDate: document.getElementById("endDate").value,
+            time: document.getElementById("time").value,
+            endTime: document.getElementById("endTime").value,
+            description: document.getElementById("description").value,
+          };
+
+          fetch("/api/events", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(newEvent),
+          })
+            .then((response) => {
+              if (!response.ok) {
+                return response.json().then((err) => Promise.reject(err));
+              }
+              return response.json();
+            })
+            .then((data) => {
+              alert("Événement ajouté avec succès!");
+              window.location.href = "calendar.html"; // Retour au calendrier
+            })
+            .catch((error) => {
+              console.error("Erreur lors de l'ajout de l'événement:", error);
+              alert(
+                "Erreur lors de l'ajout de l'événement. Veuillez réessayer."
+              );
+            });
+        });
+    </script>
+  </body>
+</html>
