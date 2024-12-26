@@ -1,230 +1,92 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* Styles de base */
 body {
-  font-family: "Arial", sans-serif;
-  background-color: #141414;
-  color: white;
-  line-height: 1.6;
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
 }
 
 header {
   background-color: #141414;
+  color: #fff;
   padding: 20px 0;
-  text-align: center;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
 }
 
-header .logo h1 {
-  font-size: 2.5em;
-  font-weight: bold;
-  color: white;
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 24px;
 }
 
 nav ul {
-  list-style: none;
+  list-style-type: none;
   padding: 0;
 }
 
 nav ul li {
-  display: inline;
-  margin: 0 15px;
+  display: inline-block;
+  margin-left: 20px;
 }
 
-nav a {
-  color: white;
+nav ul li a {
+  color: #fff;
   text-decoration: none;
-  font-weight: bold;
-  font-size: 1.1em;
+  font-size: 18px;
 }
 
-nav a:hover {
-  color: #e50914;
+#intro,
+#championship,
+#events {
+  padding: 20px;
+  background-color: #fff;
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-main {
-  padding: 40px 0;
+h2 {
+  font-size: 24px;
+  color: #141414;
 }
 
-.hero {
-  background: url("https://source.unsplash.com/1920x1080/?racecar") center/cover
-    no-repeat;
-  height: 400px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.hero-text h2 {
-  font-size: 3em;
-  color: white;
-}
-
-.hero-text p {
-  font-size: 1.2em;
-  margin-top: 20px;
-  color: #ddd;
-}
-
-.hero .btn {
-  background-color: #e50914;
-  color: white;
-  padding: 12px 25px;
-  font-size: 1.1em;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.hero .btn:hover {
-  background-color: #b81c24;
-}
-
-section {
-  padding: 40px 0;
-}
-
-section h2 {
-  font-size: 2em;
-  margin-bottom: 20px;
-  color: #e50914;
-}
-
-section p {
-  font-size: 1.1em;
-  margin-bottom: 20px;
-}
-
-ul#event-list {
-  list-style: none;
+#event-list {
+  list-style-type: none;
   padding: 0;
 }
 
-ul#event-list li {
+#event-list li {
   background-color: #333;
-  padding: 15px;
-  margin-bottom: 15px;
-  border-radius: 5px;
-}
-
-ul#event-list li strong {
-  font-size: 1.2em;
-}
-
-ul#event-list li p {
-  font-size: 1em;
-  color: #ccc;
+  color: #fff;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 8px;
 }
 
 footer {
   background-color: #141414;
-  padding: 20px 0;
+  color: #fff;
+  padding: 10px 0;
   text-align: center;
 }
 
-footer p {
-  font-size: 1em;
-}
-
 @media (max-width: 768px) {
-  header .logo h1 {
-    font-size: 2em; /* Taille plus petite pour les petits écrans */
+  header .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav ul {
+    padding-top: 10px;
   }
 
   nav ul li {
     display: block;
-    text-align: center;
-    margin: 10px 0;
-  }
-
-  .hero {
-    height: 300px;
-  }
-
-  .hero-text h2 {
-    font-size: 2.5em; /* Réduction de la taille du texte pour les petits écrans */
-  }
-
-  .hero-text p {
-    font-size: 1em;
-  }
-
-  .hero .btn {
-    padding: 10px 20px;
-    font-size: 1em;
-  }
-
-  section h2 {
-    font-size: 1.8em;
-  }
-
-  section p {
-    font-size: 1em;
-  }
-
-  ul#event-list li {
-    padding: 12px;
-  }
-
-  footer p {
-    font-size: 0.9em;
-  }
-}
-
-@media (max-width: 480px) {
-  header .logo h1 {
-    font-size: 1.5em;
-  }
-
-  nav ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  nav ul li {
-    margin: 5px 0;
-  }
-
-  .hero {
-    height: 250px;
-  }
-
-  .hero-text h2 {
-    font-size: 2em;
-  }
-
-  .hero-text p {
-    font-size: 0.9em;
-  }
-
-  .hero .btn {
-    padding: 8px 15px;
-    font-size: 0.9em;
-  }
-
-  section h2 {
-    font-size: 1.6em;
-  }
-
-  section p {
-    font-size: 0.9em;
-  }
-
-  ul#event-list li {
-    padding: 10px;
-  }
-
-  footer p {
-    font-size: 0.8em;
+    margin-left: 0;
   }
 }

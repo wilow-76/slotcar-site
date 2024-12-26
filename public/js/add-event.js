@@ -1,33 +1,38 @@
-document.getElementById("event-form").addEventListener("submit", function (e) {
-  e.preventDefault();
+document
+  .getElementById("event-form")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
 
-  // Récupérer les données du formulaire
-  var title = document.getElementById("title").value;
-  var dateStart = document.getElementById("date-start").value;
-  var timeStart = document.getElementById("time-start").value;
-  var dateEnd = document.getElementById("date-end").value;
-  var timeEnd = document.getElementById("time-end").value;
-  var description = document.getElementById("description").value;
+    const title = document.getElementById("title").value;
+    const startDate = document.getElementById("start-date").value;
+    const endDate = document.getElementById("end-date").value;
+    const startTime = document.getElementById("start-time").value;
+    const endTime = document.getElementById("end-time").value;
+    const description = document.getElementById("description").value;
 
-  var eventData = {
-    title: title,
-    start: `${dateStart}T${timeStart}`,
-    end: `${dateEnd}T${timeEnd}`,
-    description: description,
-  };
+    const eventData = {
+      title,
+      date: startDate,
+      endDate,
+      startTime,
+      endTime,
+      description,
+    };
 
-  // Envoyer les données au serveur
-  fetch("/add-event", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(eventData),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      alert("Événement ajouté avec succès!");
-      window.location.href = "calendar.html"; // Redirige vers le calendrier
+    fetch("http://localhost:3000/add-event", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(eventData),
     })
-    .catch((error) => console.error("Erreur:", error));
-});
+      .then((response) => response.json())
+      .then((data) => {
+        alert("Événement ajouté avec succès!");
+        window.location.href = "calendar.html"; // Rediriger vers le calendrier après ajout
+      })
+      .catch((error) => {
+        console.error("Erreur lors de l'ajout de l'événement:", error);
+        alert("Une erreur est survenue");
+      });
+  });

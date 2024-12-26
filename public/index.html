@@ -9,9 +9,7 @@
   <body>
     <header>
       <div class="container">
-        <div class="logo">
-          <h1>Slot Car 1:32</h1>
-        </div>
+        <h1>Bienvenue sur le site Slot Car Digital 1:32</h1>
         <nav>
           <ul>
             <li><a href="index.html">Accueil</a></li>
@@ -23,80 +21,38 @@
     </header>
 
     <main>
-      <section class="hero">
-        <div class="hero-text">
-          <h2>Bienvenue dans l'univers du Slot Car</h2>
-          <p>
-            Participez à des courses palpitantes, vivez l'excitation du
-            Championnat de France et ajoutez vos événements sur notre
-            calendrier.
-          </p>
-          <a href="calendar.html" class="btn">Voir le Calendrier</a>
-        </div>
+      <section id="intro">
+        <h2>Qu'est-ce que le Slot Car Digital 1:32 ?</h2>
+        <p>
+          Le slot car est une discipline passionnante où des voitures miniatures
+          circulent sur une piste avec un contrôle numérique. Des championnats
+          sont organisés chaque année pour tester les meilleurs pilotes !
+        </p>
       </section>
 
-      <section class="about">
-        <div class="container">
-          <h2>Qu'est-ce que le Slot Car ?</h2>
-          <p>
-            Le Slot Car est une compétition de voitures miniatures électriques à
-            échelle 1:32. Ces courses se déroulent sur des circuits spécialement
-            conçus pour offrir des sensations fortes aux pilotes. Les
-            compétitions sont régies par des règles strictes et attirent de
-            nombreux passionnés.
-          </p>
-        </div>
+      <section id="championship">
+        <h2>Championnat de France</h2>
+        <p>
+          Le Championnat de France Slot Car Digital 1:32 est une compétition
+          nationale qui réunit les meilleurs pilotes du pays. Rejoignez-nous
+          pour participer aux courses les plus excitantes !
+        </p>
       </section>
 
-      <section class="championship">
-        <div class="container">
-          <h2>Championnat de France</h2>
-          <p>
-            Le Championnat de France de Slot Car 1:32 réunit les meilleurs
-            pilotes du pays. Des courses acharnées, des événements prestigieux,
-            et une ambiance conviviale vous attendent.
-          </p>
-          <a href="calendar.html" class="btn"
-            >Consulter le calendrier des courses</a
-          >
-        </div>
-      </section>
-
-      <section class="events">
-        <div class="container">
-          <h2>Événements à venir</h2>
-          <ul id="event-list">
-            <!-- Les événements à venir seront ajoutés dynamiquement ici -->
-          </ul>
-        </div>
+      <section id="events">
+        <h2>Événements à venir</h2>
+        <ul id="event-list">
+          <!-- Les événements à venir seront insérés ici -->
+        </ul>
       </section>
     </main>
 
     <footer>
       <div class="container">
-        <p>&copy; 2024 Slot Car Digital 1:32 - Tous droits réservés.</p>
+        <p>&copy; 2024 Slot Car Digital 1:32. Tous droits réservés.</p>
       </div>
     </footer>
 
-    <script>
-      // Charger les événements à venir depuis l'API
-      fetch("http://localhost:3000/api/events")
-        .then((response) => response.json())
-        .then((events) => {
-          const eventList = document.getElementById("event-list");
-          events.forEach((event) => {
-            const listItem = document.createElement("li");
-            listItem.classList.add("event");
-            listItem.innerHTML = `
-                        <strong>${event.title}</strong> - ${event.date} <br>
-                        ${event.description}
-                    `;
-            eventList.appendChild(listItem);
-          });
-        })
-        .catch((error) => {
-          console.error("Erreur lors du chargement des événements:", error);
-        });
-    </script>
+    <script src="js/main.js"></script>
   </body>
 </html>

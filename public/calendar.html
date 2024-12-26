@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calendrier - Slot Car Digital 1:32</title>
-    <link rel="stylesheet" href="css/styles.css" />
+    <title>Calendrier des événements - Slot Car Digital 1:32</title>
     <link
       href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
     <header>
@@ -27,35 +27,19 @@
     <main>
       <section id="calendar">
         <div class="container">
-          <h2>Calendrier des événements</h2>
+          <h2>Calendrier Interactif</h2>
           <div id="fullcalendar"></div>
-          <button id="addEventBtn" class="btn">Ajouter un événement</button>
         </div>
       </section>
     </main>
 
     <footer>
       <div class="container">
-        <p>&copy; 2024 Slot Car Digital 1:32 - Tous droits réservés.</p>
+        <p>&copy; 2024 Slot Car Digital 1:32. Tous droits réservés.</p>
       </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const calendarEl = document.getElementById("fullcalendar");
-        const calendar = new FullCalendar.Calendar(calendarEl, {
-          initialView: "dayGridMonth",
-          events: "/api/events",
-        });
-        calendar.render();
-      });
-
-      document
-        .getElementById("addEventBtn")
-        .addEventListener("click", function () {
-          window.location.href = "add-event.html";
-        });
-    </script>
+    <script src="js/calendar.js"></script>
   </body>
 </html>
